@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>{% block title %}Welcome!{% endblock %}</title>
+    {% block stylesheets %}{% endblock %}
+
+    {% block javascripts %}{% endblock %}
+</head>
+<body>
+{% block body %}
+    <form method="POST" action="{{ path('test_add') }}">
+        <label for="field0">Field_0</label>
+            <input type="text" id="field0" name="field0">
+        <label for="field2">Field_2</label>
+            <input type="number" id="field2" name="field2">
+        <button type="submit" value="submit">Dodaj</button>
+    </form>
+{% endblock body %}
+</body>
+</html>

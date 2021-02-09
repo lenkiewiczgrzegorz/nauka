@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>{% block title %}Welcome!{% endblock %}</title>
+    {% block stylesheets %}{% endblock %}
+
+    {% block javascripts %}{% endblock %}
+</head>
+<body>
+{% block body %}
+    {% if newTest is defined %}
+        <p><b>Dodano {{ newTest.field0 }} o id: {{ newTest.id }}</b></p>
+    {% endif %}
+    {% for test in tests %}
+    <p>{{ test.field0 }} - {{ test.field2 }}</p>
+    {% endfor %}
+    <a href="{{ path('test_new') }}">Dodaj nowy</a>
+{% endblock body %}
+</body>
+</html>
